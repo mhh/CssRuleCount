@@ -68,7 +68,7 @@ namespace CssRuleCount
 
                 Console.WriteLine("Stylesheet \"{0}\" contains {1} rule{2}.", file, rules, rules != 1 ? "s" : "");
 
-                if (rules > RulesLimit)
+                if (rules >= RulesLimit)
                     RuleLimitExceeded = true;
             }
 
