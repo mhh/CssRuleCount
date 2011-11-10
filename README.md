@@ -1,0 +1,3 @@
+Internet Explorer has a [limit of 4096 rules](http://stackoverflow.com/questions/3406265/what-is-the-max-number-css-rules-i-can-specify-in-style-sheet-per-browser) per CSS file.  When this limit is exceeded, the browser silently ignores the excess rules, often leading to unexplained page rendering problems.
+
+CssRuleCount is a command-line .NET tool which uses the `System.Windows.Forms.WebBrowser` class to parse the specified CSS file and exits with error code 1 if the rule count exceeds the limit.  Since the `WebBrowser` class is backed by Internet Explorer's rendering engine, the rules are counted just as Internet Explorer would count them.  No GUI windows are created; CssRuleCount is suitable for integrating into an automated build pipeline.
