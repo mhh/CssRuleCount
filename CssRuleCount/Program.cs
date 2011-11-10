@@ -33,7 +33,7 @@ namespace CssRuleCount
                 LaunchBrowser(new Uri(Path.GetFullPath(arg)).AbsoluteUri);
             }
 
-            System.Environment.Exit(RuleLimitExceeded ? 1 : 0);
+            Environment.Exit(RuleLimitExceeded ? 1 : 0);
         }
 
         private static void LaunchBrowser(string stylesheet)
@@ -42,7 +42,7 @@ namespace CssRuleCount
             {
                 WebBrowser wb = new WebBrowser();
 
-                wb.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebBrowser_DocumentCompleted);
+                wb.DocumentCompleted += WebBrowser_DocumentCompleted;
                 wb.ScriptErrorsSuppressed = true;
                 wb.DocumentText = String.Format(HarnessTemplate, stylesheet);
 
